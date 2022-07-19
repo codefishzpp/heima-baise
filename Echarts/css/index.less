@@ -130,6 +130,7 @@
         .column:nth-child(2) {
             flex: 5;
             margin: 0 .125rem .1875rem;
+            overflow: hidden;
 
             .no {
                 background-color: rgba(101, 132, 226, 0.1);
@@ -276,12 +277,25 @@
                 }
 
                 .chart {
+                    z-index: 999;
                     position: absolute;
                     top: 0;
                     left: 0;
                     height: 10.125rem;
                     width: 100%;
+                }
 
+                /* 约束屏幕尺寸 */
+                @media screen and (max-width: 1024px) {
+                    html {
+                        font-size: 42px !important;
+                    }
+                }
+
+                @media screen and (min-width: 1920px) {
+                    html {
+                        font-size: 80px !important;
+                    }
                 }
             }
         }

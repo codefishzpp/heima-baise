@@ -108,6 +108,7 @@ body {
 .mainbox .column:nth-child(2) {
   flex: 5;
   margin: 0 0.125rem 0.1875rem;
+  overflow: hidden;
 }
 .mainbox .column:nth-child(2) .no {
   background-color: rgba(101, 132, 226, 0.1);
@@ -177,6 +178,7 @@ body {
 .mainbox .column:nth-child(2) .map {
   position: relative;
   height: 10.125rem;
+  /* 约束屏幕尺寸 */
 }
 .mainbox .column:nth-child(2) .map .map1 {
   position: absolute;
@@ -232,9 +234,20 @@ body {
   animation: rotate2 10s linear infinite;
 }
 .mainbox .column:nth-child(2) .map .chart {
+  z-index: 999;
   position: absolute;
   top: 0;
   left: 0;
   height: 10.125rem;
   width: 100%;
+}
+@media screen and (max-width: 1024px) {
+  .mainbox .column:nth-child(2) .map html {
+    font-size: 42px !important;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .mainbox .column:nth-child(2) .map html {
+    font-size: 80px !important;
+  }
 }
